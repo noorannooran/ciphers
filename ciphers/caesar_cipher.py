@@ -30,8 +30,8 @@ class Caesar:
             elif [char, ord(char)] in self.ord_let:
                 new_letter = ord(char)+shift
                 shifted_text.append(str(chr(new_letter)))
-            else
-                shifted_text.append(str(chr(char)))
+            else:
+                shifted_text.append(str(char))
         return shifted_text
 
 
