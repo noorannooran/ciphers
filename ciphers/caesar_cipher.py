@@ -1,19 +1,27 @@
+'''caesar_cipher.py: for Caesar cipher encryption and decryption'''
+__author__ = "noorannooran"
+
 class Caesar:
+    #initialization
     def __init__(self):
         self.letters =['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
                        'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
                        'w', 'x', 'y', 'z']
         self.punctuation = ['.', ',', '?', ';', ':', '!', ' ']
-        self.ord_punct = []
-        self.ord_let = []
+        self.ord_punct = [] #to hold the string and ordinals of punctuation
+        self.ord_let = [] #to "" of letters
 
+
+    #iterates through letters and punctuation lists
+    #appends values to ordinals lists
     def ordinal(self):
         for char in self.punctuation:
             self.ord_punct.append([char, ord(char)])
         for char in self.letters:
             self.ord_let.append([char, ord(char)])
 
-    
+
+    #shifts given text by shift amount, returns shifted text
     def cipher(self, message, shift):
         shifted_text = [] # hold result message
         new_letter = 0
@@ -35,6 +43,7 @@ class Caesar:
         return shifted_text
 
 
+    #calls cipher, prints out shifted text
     def print_translations(self, message):
         self.ordinal()
     
